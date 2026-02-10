@@ -2,86 +2,134 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>TT PVHCC Xã Ngô Mây – Chúc Tết 2026</title>
+<title>TT PVHCC Xã Ngô Mây – Chúc Tết Bính Ngọ 2026</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#f4f4f4;
-  color:#333;
+  background:linear-gradient(#8b0000,#3a0000);
+  color:#ffd84d;
+  min-height:100vh;
 }
 
 /* HEADER */
 header{
-  background:#2f4f2f;
+  background:#a40000;
   color:#fff;
-  padding:15px 30px;
+  padding:14px 30px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  flex-wrap:wrap;
 }
-.logo{font-weight:bold}
-nav a{
+header a{
   color:#fff;
   text-decoration:none;
-  margin-left:15px;
-  padding:6px 12px;
+  margin-left:20px;
+  padding:6px 14px;
   border-radius:20px;
   transition:.3s;
 }
-nav a:hover{
+header a:hover,
+header a.active{
   background:#ffd84d;
-  color:#2f4f2f;
+  color:#8b0000;
 }
 
 /* HERO */
 .hero{
   min-height:80vh;
-  background:linear-gradient(#b30000,#3a0000);
-  color:#ffd84d;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 20px;
   text-align:center;
-  padding:60px 20px;
 }
-.hero h1{font-size:42px}
-.hero h2{font-size:64px;margin:15px 0}
-.hero p{font-size:18px;line-height:1.6}
 
-.wish{
-  margin:25px 0;
+/* GREETING */
+.greeting{
+  max-width:900px;
+  margin:auto;
+}
+.greeting .line{
+  font-size:20px;
+  margin:6px 0;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+}
+.greeting .strong{
+  font-size:26px;
+  font-weight:bold;
+}
+.greeting .space{
+  margin-top:18px;
+  font-weight:bold;
+}
+.greeting .year{
+  font-size:64px;
+  font-weight:800;
+  margin:15px 0;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+}
+.greeting .wish{
+  margin-top:22px;
   font-size:22px;
   color:#fff;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
 }
 
 /* BUTTON */
 .btn{
   display:inline-block;
+  margin-top:30px;
   background:#ffd84d;
-  color:#9b0000;
-  padding:12px 28px;
-  border-radius:30px;
+  color:#8b0000;
+  padding:14px 34px;
+  border-radius:40px;
   text-decoration:none;
   font-weight:bold;
   transition:.3s;
 }
 .btn:hover{
   transform:scale(1.08);
-  box-shadow:0 0 15px gold;
+  box-shadow:0 0 20px gold;
 }
 
 /* FOOTER */
 footer{
-  background:#2f4f2f;
+  background:#a40000;
   color:#fff;
   text-align:center;
   padding:15px;
 }
 
+/* ANIMATION */
+@keyframes fadeUp{
+  from{transform:translateY(20px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+
+/* DELAY TỪNG DÒNG */
+.greeting .line:nth-child(1){animation-delay:.2s}
+.greeting .line:nth-child(2){animation-delay:.4s}
+.greeting .line:nth-child(3){animation-delay:.6s}
+.greeting .line:nth-child(4){animation-delay:.8s}
+.greeting .line:nth-child(5){animation-delay:1s}
+.greeting .line:nth-child(6){animation-delay:1.2s}
+.greeting .line:nth-child(7){animation-delay:1.4s}
+.greeting .line:nth-child(8){animation-delay:1.6s}
+.greeting .line:nth-child(9){animation-delay:1.8s}
+.greeting .year{animation-delay:2.2s}
+.greeting .wish{animation-delay:2.8s}
+
+/* RESPONSIVE */
 @media(max-width:768px){
-  .hero h1{font-size:28px}
-  .hero h2{font-size:44px}
+  .greeting .strong{font-size:20px}
+  .greeting .line{font-size:16px}
+  .greeting .year{font-size:42px}
 }
 </style>
 </head>
@@ -89,28 +137,38 @@ footer{
 <body>
 
 <header>
-  <div class="logo">TT PVHCC XÃ NGÔ MÂY</div>
+  <strong>TT PVHCC XÃ NGÔ MÂY</strong>
   <nav>
-    <a href="index.html">Trang chủ</a>
+    <a href="index.html" class="active">Trang chủ</a>
     <a href="loc-dau-nam.html">Xốc quẻ đầu năm</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>CHÚC MỪNG NĂM MỚI</h1>
-  <h2>BÍNH NGỌ 2026</h2>
-  <p>
-    Trung tâm Phục vụ Hành chính công xã Ngô Mây<br>
-    Kính chúc toàn thể cán bộ và Nhân dân
-  </p>
+  <div class="greeting">
+    <div class="line strong">TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG</div>
+    <div class="line strong">XÃ NGÔ MÂY</div>
 
-  <div class="wish">
-    🌸 AN KHANG THỊNH VƯỢNG – VẠN SỰ NHƯ Ý 🌸
+    <div class="line space">TRÂN TRỌNG KÍNH CHÚC</div>
+
+    <div class="line">QUÝ ĐỒNG CHÍ LÃNH ĐẠO,</div>
+    <div class="line">CÁN BỘ, CÔNG CHỨC,</div>
+    <div class="line">NGƯỜI HOẠT ĐỘNG KHÔNG CHUYÊN TRÁCH,</div>
+    <div class="line">NGƯỜI LAO ĐỘNG HỢP ĐỒNG</div>
+
+    <div class="line space">CÙNG TOÀN THỂ NHÂN DÂN</div>
+
+    <div class="line">ĐÓN TẾT NGUYÊN ĐÁN</div>
+    <div class="year">BÍNH NGỌ 2026</div>
+
+    <div class="wish">
+      🌸 AN KHANG THỊNH VƯỢNG – VẠN SỰ NHƯ Ý 🌸
+    </div>
+
+    <a class="btn" href="loc-dau-nam.html">
+      🎋 XỐC QUẺ ĐẦU NĂM – LẤY LỘC
+    </a>
   </div>
-
-  <a class="btn" href="loc-dau-nam.html">
-    🎋 XỐC QUẺ ĐẦU NĂM – LẤY LỘC
-  </a>
 </section>
 
 <footer>
