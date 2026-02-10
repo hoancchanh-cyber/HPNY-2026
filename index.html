@@ -1,202 +1,40 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<title>Welcome to 2026 and bye 2025</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@900&family=Orbitron:wght@600&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html,body{height:100%;}
-body{
-  min-height:100vh;
-  background:
-    radial-gradient(circle at bottom, #a40000, #4d0000 70%),
-    linear-gradient(#b30000, #520000);
-  overflow:hidden;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:'Playfair Display', serif;
-  position:relative;
-  color:#ffd84d;
-}
-
-/* gold particles */
-body::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle, gold 1px, transparent 2px) 0 0/50px 50px;
-  opacity:.18;
-  animation: gold 25s linear infinite;
-  pointer-events:none;
-}
-@keyframes gold{ to{background-position:0 -1200px} }
-
-/* fireworks */
-.rocket{ position:absolute; bottom:0; width:3px; height:40px; background:linear-gradient(to top, gold, transparent); z-index:3; }
-.particle{ position:absolute; width:4px; height:4px; background:gold; border-radius:50%; box-shadow:0 0 10px gold; z-index:3; }
-
-/* lanterns */
-.lantern{ position:absolute; top:60px; width:80px; height:120px; background:#d40000; border-radius:20px; box-shadow:0 0 30px red; z-index:2; }
-.lantern::before{ content:""; position:absolute; top:-20px; left:50%; width:6px; height:20px; background:gold; transform:translateX(-50%); }
-.lantern::after{ content:""; position:absolute; bottom:-18px; left:50%; width:12px; height:18px; background:gold; transform:translateX(-50%); }
-.lantern.left{ left:60px } .lantern.right{ right:60px }
-
-.round-lantern{ position:absolute; width:70px; height:70px; background:radial-gradient(circle at top,#ff5555,#b30000); border-radius:50%; box-shadow:0 0 25px rgba(255,0,0,.8); animation:swing 4s ease-in-out infinite; z-index:2; }
-.round-lantern::before{ content:""; position:absolute; top:-20px; left:50%; width:4px; height:20px; background:gold; transform:translateX(-50%); }
-.round-lantern::after{ content:""; position:absolute; bottom:-10px; left:50%; width:10px; height:10px; background:gold; border-radius:50%; transform:translateX(-50%); }
-.rl1{ top:120px; left:180px } .rl2{ top:160px; right:200px; animation-delay:1s } .rl3{ top:90px; left:50%; transform:translateX(-50%); animation-delay:2s }
-@keyframes swing{ 0%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)} 100%{transform:rotate(-3deg)} }
-
-/* center */
-.main{ text-align:center; color:#ffd700; z-index:2; position:relative }
-.timer-box{ border:4px solid gold; border-radius:24px; padding:30px 60px; background:rgba(0,0,0,.45); box-shadow:0 0 40px gold; margin-bottom:40px; }
-.bye{ font-family:'Great Vibes', cursive; font-size:64px; color:#ffd84d; text-shadow:0 0 60px rgba(255,180,0,.8); }
-.countdown{ font-family:'Orbitron', monospace; font-size:36px; color:#ff4040; letter-spacing:3px; }
-.sub{ margin-top:8px; font-size:18px; color:#ffffff }
-.welcome{ font-family:'Great Vibes', cursive; font-size:100px; text-shadow:0 0 40px #ffb700; }
-.year{ font-family:'Poppins', sans-serif; font-weight:900; font-size:130px; background:linear-gradient(#fff7b0,#ffb700); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.footer{ margin-top:25px; font-size:20px; color:#fff5cc }
-
-/* markdown box */
-#markdown{ position:fixed; left:20px; bottom:20px; max-width:360px; max-height:50vh; overflow:auto; background:rgba(0,0,0,0.45); border:2px solid rgba(255,215,0,0.6); padding:16px; border-radius:12px; color:#fff9d6; font-family:Poppins, sans-serif; z-index:4; box-shadow:0 0 20px rgba(0,0,0,0.6); }
-
-/* enable sound button */
-#enableSound{ position:fixed; right:20px; bottom:20px; z-index:5; background:linear-gradient(180deg,#ffb84d,#ff8a00); color:#2b0b00; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.4); }
-
-/* responsive */
-@media (max-width:700px){ .year{font-size:80px} .welcome{font-size:56px} #markdown{max-width:90vw; left:5%; right:5%;} }
-</style>
+<meta charset="UTF-8">
+<title>TT PVHCC Xã Ngô Mây – Chúc Tết 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+<header>
+  <div class="logo">TT PVHCC XÃ NGÔ MÂY</div>
+  <nav>
+    <a href="index.html" class="active">Trang chủ</a>
+    <a href="loc-dau-nam.html">Xốc quẻ đầu năm</a>
+  </nav>
+</header>
 
-<div class="lantern left"></div>
-<div class="lantern right"></div>
-<div class="round-lantern rl1"></div>
-<div class="round-lantern rl2"></div>
-<div class="round-lantern rl3"></div>
+<section class="hero">
+  <h1>CHÚC MỪNG NĂM MỚI</h1>
+  <h2>BÍNH NGỌ 2026</h2>
+  <p>
+    Trung tâm Phục vụ Hành chính công xã Ngô Mây<br>
+    Kính chúc toàn thể cán bộ và Nhân dân
+  </p>
 
-<div class="main">
-  <div class="timer-box">
-    <div class="bye">Bye 2025</div>
-    <div id="cd" class="countdown">00:00:00:00</div>
-    <div class="sub">Sắp tới năm mới Bính Ngọ 2026</div>
+  <div class="wish">
+    🌸 AN KHANG THỊNH VƯỢNG – VẠN SỰ NHƯ Ý 🌸
   </div>
-  <div class="welcome">WELCOME</div>
-  <div class="year">2026</div>
-  <div class="footer">Chúc Mừng Năm Mới - An Khang Thịnh Vượng!</div>
-</div>
 
-<div id="markdown" aria-live="polite">Đang tải nội dung... (file newyear.md)</div>
-<button id="enableSound" aria-pressed="false">Bật âm thanh pháo hoa</button>
+  <a class="btn" href="loc-dau-nam.html">
+    🎋 XỐC QUẺ ĐẦU NĂM – LẤY LỘC
+  </a>
+</section>
 
-<!-- audio file expected at assets/audio/audio_nhacxuan.mp3 -->
-<audio id="fwSound" preload="auto" src="assets/audio/audio_nhacxuan.mp3"></audio>
-
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-/* countdown */
-const cd = document.getElementById("cd");
-function tick(){
-  const end = new Date("2026-01-01T00:00:00").getTime();
-  let t = end - Date.now(); if(t < 0) t = 0;
-  const d = Math.floor(t/86400000);
-  const h = Math.floor(t%86400000/3600000);
-  const m = Math.floor(t%3600000/60000);
-  const s = Math.floor(t%60000/1000);
-  cd.innerText = `${d.toString().padStart(2,"0")}:${h.toString().padStart(2,"0")}:${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
-}
-setInterval(tick,1000); tick();
-
-/* load markdown */
-async function loadMarkdown(){
-  try{
-    const res = await fetch("newyear.md");
-    if(!res.ok) throw new Error("Không thể tải file .md");
-    const text = await res.text();
-    document.getElementById("markdown").innerHTML = marked.parse(text);
-  }catch(e){
-    document.getElementById("markdown").innerText = "Không tải được nội dung markdown.";
-    console.warn(e);
-  }
-}
-loadMarkdown();
-
-/* sound handling */
-let soundEnabled = false;
-const enableBtn = document.getElementById("enableSound");
-const fwSoundEl = document.getElementById("fwSound");
-
-function unlockAudio(){
-  soundEnabled = true;
-  enableBtn.setAttribute("aria-pressed","true");
-  enableBtn.innerText = "Âm thanh đã bật";
-  enableBtn.disabled = true;
-  try{
-    fwSoundEl.currentTime = 0;
-    fwSoundEl.volume = 0.01;
-    fwSoundEl.play().catch(()=>{});
-    setTimeout(()=>{ fwSoundEl.pause(); fwSoundEl.volume = 1; }, 200);
-  }catch(e){}
-}
-enableBtn.addEventListener("click", unlockAudio);
-
-function playFireworkSound(){
-  if(!soundEnabled) return;
-  const a = new Audio("assets/audio/audio_nhacxuan.mp3");
-  a.volume = 0.9;
-  a.play().catch(()=>{});
-}
-
-/* fireworks animation */
-function firework(){
-  const x = Math.random()*window.innerWidth;
-  const h = 300 + Math.random()*300;
-  const rocket = document.createElement("div");
-  rocket.className = "rocket";
-  rocket.style.left = x + "px";
-  document.body.appendChild(rocket);
-  rocket.animate([{transform:"translateY(0)"},{transform:`translateY(-${h}px)`}],{duration:900,easing:"ease-out"});
-  setTimeout(()=>{
-    const cx = x;
-    const cy = window.innerHeight - h;
-    rocket.remove();
-    playFireworkSound();
-    const count = Math.floor(40 + Math.random()*30);
-    for(let i=0;i<count;i++){
-      const p = document.createElement("div");
-      p.className = "particle";
-      p.style.left = cx + "px";
-      p.style.top = cy + "px";
-      const angle = (Math.PI*2/count)*i;
-      const dist = 120 + Math.random()*80;
-      const dur = 1000 + Math.random()*800;
-      p.animate([
-        {transform:"translate(0,0)", opacity:1},
-        {transform:`translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist}px)`, opacity:0}
-      ], {duration:dur, easing:"cubic-bezier(.1,.9,.2,1)"});
-      document.body.appendChild(p);
-      setTimeout(()=>p.remove(), dur);
-    }
-  },900);
-}
-setInterval(()=>{ for(let i=0;i<3;i++) firework(); },700);
-
-/* unlock on first interaction if user didn't press button */
-function firstInteractionUnlock(){
-  if(soundEnabled) return;
-  soundEnabled = true;
-  enableBtn.setAttribute("aria-pressed","true");
-  enableBtn.innerText = "Âm thanh đã bật";
-  enableBtn.disabled = true;
-  try{ fwSoundEl.currentTime = 0; fwSoundEl.play().then(()=>fwSoundEl.pause()).catch(()=>{}); }catch(e){}
-  window.removeEventListener("pointerdown", firstInteractionUnlock);
-}
-window.addEventListener("pointerdown", firstInteractionUnlock, {once:true});
-</script>
+<footer>
+  © 2026 – Trung tâm Phục vụ Hành chính công xã Ngô Mây
+</footer>
 </body>
 </html>
