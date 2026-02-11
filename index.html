@@ -6,65 +6,71 @@
   <title>TT PVHCC Xã Ngô Mây – Chúc Tết Bính Ngọ 2026</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <style>
-    body { background: linear-gradient(to bottom, #8b0000, #3a0000); color: #ffd84d; min-height: 100vh; overflow-x: hidden; }
+    body { background: linear-gradient(to bottom, #8b0000, #3a0000); color: #ffd84d; }
     .marquee { background: #800000; overflow: hidden; white-space: nowrap; font-weight: bold; }
     .marquee-content { display: inline-block; padding-right: 100%; animation: marquee 40s linear infinite; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
     .greeting .line { opacity: 0; animation: fadeUp 1s forwards; }
-    .greeting .wish { opacity: 0; animation: fadeUp 1s forwards, sparkle 2s infinite; color: #fff; }
+    .greeting .wish { opacity: 0; animation: fadeUp 1s forwards, sparkle 2s infinite; }
     @keyframes fadeUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes sparkle { 0%,100% { text-shadow: 0 0 8px #fff796; } 50% { text-shadow: 0 0 14px #ffd84d; } }
-    .countdown-box { background: rgba(255,255,255,0.1); border: 1px solid #ffd84d; border-radius: 10px; padding: 15px; min-width: 90px; }
-    .time-num { font-size: 2.8rem; font-weight: bold; color: #fff; }
-    .time-label { font-size: 1rem; }
-    canvas { position: fixed; inset: 0; pointer-events: none; }
+    @keyframes sparkle { 0%, 100% { text-shadow: 0 0 8px #fff796; } 50% { text-shadow: 0 0 14px #ffd84d; } }
+    .countdown-card { background: rgba(255,255,255,0.1); border: 1px solid #ffd84d; border-radius: 10px; padding: 1rem; min-width: 80px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+    canvas { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
     #fireworksCanvas { z-index: 1; }
-    #snowCanvas { z-index: 0; }
-    footer{
-  background:#a40000;
-  color:#fff;
-  text-align:center;
-  padding:15px;
-  font-size:14px;
-  position:relative;
-  z-index:2;
-}
   </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-  <!-- Nhạc nền local - Đặt nhac-tet.mp3 cùng thư mục -->
+  <!-- Nhạc nền -->
   <audio id="tetMusic" loop volume="0.25">
     <source src="nhac-tet.mp3" type="audio/mpeg">
-    Trình duyệt không hỗ trợ âm thanh.
   </audio>
 
-  <header class="marquee py-2 text-center text-white">
-    <div class="marquee-content px-3">
-      👉 Nhân dịp Xuân Bính Ngọ 2026, Trung tâm Phục vụ Hành chính công xã Ngô Mây kính chúc Quý đồng chí lãnh đạo, cán bộ, công chức, viên chức, người lao động và toàn thể Nhân dân một năm mới tràn đầy sức khỏe, hạnh phúc, an khang thịnh vượng, vạn sự như ý 🎉
-    </div>
-    <div class="marquee-content px-3">
-      👉 Mong rằng năm mới sẽ mang đến nhiều thành công trong công việc, nhiều niềm vui trong cuộc sống, tình đoàn kết gắn bó, và sự phát triển bền vững cho quê hương Ngô Mây thân yêu 🌸
-    </div>
+  <!-- Marquee -->
+  <header class="marquee py-2 text-white">
+    <div class="marquee-content px-3">👉 Nhân dịp Xuân Bính Ngọ 2026, Trung tâm Phục vụ Hành chính công xã Ngô Mây kính chúc Quý đồng chí lãnh đạo, cán bộ, công chức, viên chức, người lao động và toàn thể Nhân dân một năm mới tràn đầy sức khỏe, hạnh phúc, an khang thịnh vượng, vạn sự như ý 🎉</div>
+    <div class="marquee-content px-3">👉 Mong rằng năm mới sẽ mang đến nhiều thành công trong công việc, nhiều niềm vui trong cuộc sống, tình đoàn kết gắn bó, và sự phát triển bền vững cho quê hương Ngô Mây thân yêu 🌸</div>
   </header>
 
-  <section class="d-flex align-items-center justify-content-center text-center py-5">
+  <!-- Hero -->
+  <section class="flex-grow-1 d-flex align-items-center justify-content-center text-center py-5">
     <div class="greeting container">
-      <h1 class="display-4 fw-bold">TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG</h1>
-      <h2 class="display-5 fw-bold">XÃ NGÔ MÂY</h2>
-      <div class="my-4 fw-bold fs-3">KÍNH CHÚC</div>
-      <p class="fs-5">QUÝ ĐỒNG CHÍ LÃNH ĐẠO, CÁN BỘ, CÔNG CHỨC</p>
-      <p class="fs-5">NGƯỜI LAO ĐỘNG VÀ TOÀN THỂ NHÂN DÂN</p>
-      <p class="fs-4 fw-bold">ĐÓN TẾT BÍNH NGỌ</p>
+      <h1 class="display-4 fw-bold line">TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG</h1>
+      <h2 class="display-5 fw-bold line">XÃ NGÔ MÂY</h2>
+      <div class="my-3 fw-bold fs-3 space line">KÍNH CHÚC</div>
+      <p class="fs-5 line">QUÝ ĐỒNG CHÍ LÃNH ĐẠO, CÁN BỘ, CÔNG CHỨC</p>
+      <p class="fs-5 line">NGƯỜI LAO ĐỘNG VÀ TOÀN THỂ NHÂN DÂN</p>
+      <p class="fs-4 fw-bold line">ĐÓN TẾT BÍNH NGỌ</p>
       <div class="wish display-5 fw-bold my-4">🌸 AN KHANG THỊNH VƯỢNG – VẠN SỰ NHƯ Ý 🌸</div>
 
+      <!-- Countdown -->
       <div class="countdown mt-5">
-        <h5 class="fw-bold mb-3">⏳ ĐẾM NGƯỢC ĐẾN GIAO THỪA</h5>
-        <div class="d-flex justify-content-center gap-3 flex-wrap">
-          <div class="countdown-box text-center"><div class="time-num" id="days">00</div><div class="time-label">Ngày</div></div>
-          <div class="countdown-box text-center"><div class="time-num" id="hours">00</div><div class="time-label">Giờ</div></div>
-          <div class="countdown-box text-center"><div class="time-num" id="minutes">00</div><div class="time-label">Phút</div></div>
-          <div class="countdown-box text-center"><div class="time-num" id="seconds">00</div><div class="time-label">Giây</div></div>
+        <h5 class="fw-bold mb-3 count-title">⏳ ĐẾM NGƯỢC ĐẾN GIAO THỪA</h5>
+        <div class="row justify-content-center g-3">
+          <div class="col-auto">
+            <div class="countdown-card text-center">
+              <div class="badge bg-warning text-dark fs-3 time-num" id="days">00</div>
+              <div class="time-label mt-1">Ngày</div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="countdown-card text-center">
+              <div class="badge bg-warning text-dark fs-3 time-num" id="hours">00</div>
+              <div class="time-label mt-1">Giờ</div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="countdown-card text-center">
+              <div class="badge bg-warning text-dark fs-3 time-num" id="minutes">00</div>
+              <div class="time-label mt-1">Phút</div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="countdown-card text-center">
+              <div class="badge bg-warning text-dark fs-3 time-num" id="seconds">00</div>
+              <div class="time-label mt-1">Giây</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -80,39 +86,37 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
   <script>
-    // Code FIREWORKS, SNOW, COUNTDOWN (dán đầy đủ từ file cũ của bạn vào đây - giữ nguyên logic cũ)
-    // Ví dụ placeholder cho fireworks (thay bằng code đầy đủ):
+    // FIREWORKS, SNOW, COUNTDOWN (dán code đầy đủ từ phiên bản cũ)
+    // Ví dụ:
     const canvas = document.getElementById("fireworksCanvas");
     const ctx = canvas.getContext("2d");
     function resize() { canvas.width = innerWidth; canvas.height = innerHeight; }
     window.addEventListener("resize", resize); resize();
-    // ... (thêm class Particle, explode, animate như phiên bản đầu)
+    // ... (thêm class Particle, explode, animate, particles, setInterval explode)
+
+    // Snow tương tự
 
     // Countdown
     const tetTime = new Date("2026-02-16T00:00:00").getTime();
-    const d = document.getElementById("days"), h = document.getElementById("hours"), m = document.getElementById("minutes"), s = document.getElementById("seconds");
+    const days = document.getElementById("days"), hours = document.getElementById("hours"), minutes = document.getElementById("minutes"), seconds = document.getElementById("seconds");
     function countdown() {
       const dist = tetTime - Date.now();
       if (dist <= 0) {
         document.querySelector(".count-title").innerHTML = "🎉 CHÚC MỪNG NĂM MỚI BÍNH NGỌ 2026 🎉";
-        d.innerHTML = h.innerHTML = m.innerHTML = s.innerHTML = "00";
+        days.innerHTML = hours.innerHTML = minutes.innerHTML = seconds.innerHTML = "00";
         return;
       }
-      d.innerHTML = Math.floor(dist / 86400000).toString().padStart(2, '0');
-      h.innerHTML = Math.floor((dist % 86400000) / 3600000).toString().padStart(2, '0');
-      m.innerHTML = Math.floor((dist % 3600000) / 60000).toString().padStart(2, '0');
-      s.innerHTML = Math.floor((dist % 60000) / 1000).toString().padStart(2, '0');
+      days.innerHTML = Math.floor(dist / 86400000).toString().padStart(2, '0');
+      hours.innerHTML = Math.floor((dist % 86400000) / 3600000).toString().padStart(2, '0');
+      minutes.innerHTML = Math.floor((dist % 3600000) / 60000).toString().padStart(2, '0');
+      seconds.innerHTML = Math.floor((dist % 60000) / 1000).toString().padStart(2, '0');
     }
     setInterval(countdown, 1000); countdown();
 
-    // Nhạc tự phát
+    // Nhạc
     const music = document.getElementById("tetMusic");
-    window.addEventListener('load', () => {
-      setTimeout(() => { music.play().catch(e => console.log("Autoplay bị chặn, click trang để phát:", e)); }, 1000);
-    });
-    document.addEventListener('click', () => {
-      if (music.paused) music.play().catch(() => {});
-    }, { once: true });
+    window.addEventListener('load', () => setTimeout(() => music.play().catch(() => {}), 1000));
+    document.addEventListener('click', () => { if (music.paused) music.play(); }, { once: true });
   </script>
 </body>
 </html>
