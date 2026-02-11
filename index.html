@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -161,6 +161,378 @@ footer{
 <footer>
   © 2026 – Trung tâm Phục vụ Hành chính công xã Ngô Mây
 </footer>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>TT PVHCC Xã Ngô Mây – Chúc Tết Bính Ngọ 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(#8b0000,#3a0000);
+  color:#ffd84d;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  overflow-x:hidden;
+}
+
+/* HEADER MARQUEE */
+header.marquee{
+  background:#800000;
+  padding:10px 30px;
+  overflow:hidden;
+  white-space:nowrap;
+  font-weight:bold;
+  z-index:2;
+  position:relative;
+}
+
+.marquee-content {
+  display:inline-block;
+  padding-right:100%;
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* HERO */
+.hero{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  padding:60px 20px 40px;
+  z-index:2;
+}
+
+/* TEXT SCALE */
+:root{
+  --title-size: clamp(20px, 3vw, 28px);
+  --text-size: clamp(14px, 2.2vw, 18px);
+  --wish-size: clamp(16px, 2.5vw, 22px);
+}
+
+/* GREETING */
+.greeting{max-width:900px}
+.greeting .line{
+  font-size:var(--text-size);
+  margin:6px 0;
+  opacity:0;
+  animation:fadeUp 1s forwards;
+}
+.greeting .strong{
+  font-size:var(--title-size);
+  font-weight:bold;
+}
+.greeting .space{margin-top:18px;font-weight:bold}
+.greeting .wish{
+  margin-top:20px;
+  font-size:var(--wish-size);
+  color:#fff;
+  opacity:0;
+  animation:fadeUp 1s forwards, sparkle 2s infinite;
+}
+@keyframes fadeUp{
+  from{transform:translateY(20px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+@keyframes sparkle{
+  0%,100%{text-shadow:0 0 8px #fff796}
+  50%{text-shadow:0 0 14px #ffd84d}
+}
+.greeting .line:nth-child(1){animation-delay:.2s}
+.greeting .line:nth-child(2){animation-delay:.4s}
+.greeting .line:nth-child(3){animation-delay:.6s}
+.greeting .line:nth-child(4){animation-delay:.8s}
+.greeting .line:nth-child(5){animation-delay:1s}
+.greeting .line:nth-child(6){animation-delay:1.2s}
+.greeting .wish{animation-delay:1.8s}
+
+/* COUNTDOWN */
+.countdown{margin-top:40px}
+.count-title{font-weight:bold;font-size:18px;margin-bottom:10px}
+.time-box{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+}
+.time-box div{
+  background:rgba(255,255,255,.1);
+  border:1px solid #ffd84d;
+  border-radius:10px;
+  padding:10px 14px;
+  min-width:70px;
+}
+.time-box span{
+  font-size:28px;
+  font-weight:bold;
+  color:#fff;
+}
+.time-box small{font-size:13px}
+
+/* CANVAS */
+#fireworksCanvas,
+#snowCanvas{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+}
+#fireworksCanvas{ z-index:1; }
+#snowCanvas{ z-index:0; }
+
+/* FOOTER */
+footer{
+  background:#a40000;
+  color:#fff;
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+  position:relative;
+  z-index:2;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NHẠC NỀN TẾT từ Pixabay: Vietnamese Spring Festival - BGM for Youtube Video -->
+<audio id="tetMusic" autoplay loop volume="0.3">
+  <source src="https://cdn.pixabay.com/download/audio/2024/01/05/audio_3d8d7e8e4a.mp3?filename=vietnamese-spring-festival-bgm-for-youtube-video-245127.mp3" type="audio/mpeg">
+  Trình duyệt của bạn không hỗ trợ phát nhạc.
+</audio>
+
+<header class="marquee">
+  <div class="marquee-content">
+    👉 Nhân dịp Xuân Bính Ngọ 2026, Trung tâm Phục vụ Hành chính công xã Ngô Mây kính chúc Quý đồng chí lãnh đạo, cán bộ, công chức, viên chức, người lao động và toàn thể Nhân dân một năm mới tràn đầy sức khỏe, hạnh phúc, an khang thịnh vượng, vạn sự như ý 🎉
+  </div>
+  <div class="marquee-content">
+    👉 Mong rằng năm mới sẽ mang đến nhiều thành công trong công việc, nhiều niềm vui trong cuộc sống, tình đoàn kết gắn bó, và sự phát triển bền vững cho quê hương Ngô Mây thân yêu 🌸
+  </div>
+</header>
+
+<section class="hero">
+  <div class="greeting">
+    <div class="line strong">TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG</div>
+    <div class="line strong">XÃ NGÔ MÂY</div>
+    <div class="line space">KÍNH CHÚC</div>
+    <div class="line">QUÝ ĐỒNG CHÍ LÃNH ĐẠO, CÁN BỘ, CÔNG CHỨC</div>
+    <div class="line">NGƯỜI LAO ĐỘNG VÀ TOÀN THỂ NHÂN DÂN</div>
+    <div class="line">ĐÓN TẾT BÍNH NGỌ</div>
+    <div class="wish">🌸 AN KHANG THỊNH VƯỢNG – VẠN SỰ NHƯ Ý 🌸</div>
+
+    <div class="countdown">
+      <div class="count-title">⏳ ĐẾM NGƯỢC ĐẾN GIAO THỪA</div>
+      <div class="time-box">
+        <div><span id="days">00</span><small>Ngày</small></div>
+        <div><span id="hours">00</span><small>Giờ</small></div>
+        <div><span id="minutes">00</span><small>Phút</small></div>
+        <div><span id="seconds">00</span><small>Giây</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<canvas id="fireworksCanvas"></canvas>
+<canvas id="snowCanvas"></canvas>
+
+<footer>
+  © 2026 – Trung tâm Phục vụ Hành chính công xã Ngô Mây
+</footer>
+
+<script>
+// ===== FIREWORKS ===== (giữ nguyên)
+const canvas = document.getElementById("fireworksCanvas");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+class Particle {
+  constructor(x, y, c) {
+    this.x = x; this.y = y; this.c = c;
+    const a = Math.random() * Math.PI * 2;
+    const s = Math.random() * 4 + 1;
+    this.vx = Math.cos(a) * s;
+    this.vy = Math.sin(a) * s;
+    this.life = 1;
+  }
+  update() {
+    this.vy += 0.04;
+    this.x += this.vx;
+    this.y += this.vy;
+    this.life -= 0.015;
+  }
+  draw() {
+    ctx.globalAlpha = this.life;
+    ctx.fillStyle = this.c;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+let particles = [];
+const colors = ["#ffd84d", "#ff4d4d", "#4dff88", "#4dd2ff", "#ff66ff"];
+
+function explode(x, y) {
+  const c = colors[Math.floor(Math.random() * colors.length)];
+  for (let i = 0; i < 50; i++) particles.push(new Particle(x, y, c));
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles = particles.filter(p => p.life > 0);
+  particles.forEach(p => { p.update(); p.draw(); });
+  requestAnimationFrame(animate);
+}
+animate();
+
+const isMobile = innerWidth < 768;
+setInterval(() => {
+  if (isMobile && particles.length > 350) return;
+  explode(
+    Math.random() * canvas.width * 0.8 + canvas.width * 0.1,
+    Math.random() * canvas.height * 0.35 + canvas.height * 0.1
+  );
+}, isMobile ? 1600 : 1100);
+
+// ===== SNOWFALL ===== (giữ nguyên)
+const snowCanvas = document.getElementById("snowCanvas");
+const snowCtx = snowCanvas.getContext("2d");
+
+function resizeSnow() {
+  snowCanvas.width = window.innerWidth;
+  snowCanvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resizeSnow);
+resizeSnow();
+
+class Snowflake {
+  constructor() {
+    this.reset();
+  }
+  reset() {
+    this.x = Math.random() * snowCanvas.width;
+    this.y = Math.random() * -100 - 50;
+    this.size = Math.random() * 3 + 1;
+    this.speed = Math.random() * 0.8 + 0.4;
+    this.wind = Math.random() * 0.4 - 0.2;
+    this.opacity = Math.random() * 0.4 + 0.6;
+    this.angle = Math.random() * Math.PI * 2;
+    this.swing = Math.random() * 0.015 + 0.008;
+  }
+  update() {
+    this.y += this.speed;
+    this.x += Math.sin(this.angle) * this.swing + this.wind;
+    this.angle += 0.04;
+    if (this.y > snowCanvas.height + 20) {
+      this.reset();
+    }
+  }
+  draw() {
+    snowCtx.save();
+    snowCtx.globalAlpha = this.opacity;
+    snowCtx.fillStyle = "#ffffff";
+    snowCtx.shadowBlur = 6;
+    snowCtx.shadowColor = "rgba(255,255,255,0.8)";
+    snowCtx.beginPath();
+    snowCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    snowCtx.fill();
+    snowCtx.restore();
+  }
+}
+
+let snowflakes = [];
+const snowDensity = window.innerWidth < 768 ? 100 : 220;
+for (let i = 0; i < snowDensity; i++) {
+  snowflakes.push(new Snowflake());
+}
+
+function animateSnow() {
+  snowCtx.clearRect(0, 0, snowCanvas.width, snowCanvas.height);
+  snowflakes.forEach(flake => {
+    flake.update();
+    flake.draw();
+  });
+  requestAnimationFrame(animateSnow);
+}
+animateSnow();
+
+// ===== COUNTDOWN ===== (giữ nguyên)
+const tetTime = new Date("2026-02-16T00:00:00").getTime();
+const d = document.getElementById("days"),
+      h = document.getElementById("hours"),
+      m = document.getElementById("minutes"),
+      s = document.getElementById("seconds");
+const title = document.querySelector(".count-title");
+
+function countdown() {
+  const now = Date.now();
+  const dist = tetTime - now;
+
+  if (dist <= 0) {
+    title.innerHTML = "🎉 CHÚC MỪNG NĂM MỚI BÍNH NGỌ 2026 🎉";
+    d.innerHTML = "00";
+    h.innerHTML = "00";
+    m.innerHTML = "00";
+    s.innerHTML = "00";
+    for (let i = 0; i < 5; i++) {
+      explode(Math.random() * canvas.width, Math.random() * canvas.height * 0.4);
+    }
+    return;
+  }
+
+  const days = Math.floor(dist / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((dist % (1000 * 60)) / 1000);
+
+  d.innerHTML = days.toString().padStart(2, '0');
+  h.innerHTML = hours.toString().padStart(2, '0');
+  m.innerHTML = minutes.toString().padStart(2, '0');
+  s.innerHTML = seconds.toString().padStart(2, '0');
+}
+
+setInterval(countdown, 1000);
+countdown();
+
+// ===== NHẠC NỀN - CỐ GẮNG PHÁT LUÔN KHI MỞ TRANG =====
+const music = document.getElementById("tetMusic");
+
+// Thử phát ngay khi trang load xong
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    music.play().catch(err => {
+      console.log("Autoplay bị chặn:", err);
+      // Nếu bị block, chờ user tương tác
+    });
+  }, 1000); // Delay nhẹ để tránh block sớm
+});
+
+// Nếu user click bất kỳ đâu, thử play lại (unlock âm thanh)
+document.addEventListener("click", () => {
+  if (music.paused) {
+    music.play().catch(() => {});
+  }
+}, { once: true });  // Chỉ thử 1 lần
+
+</script>
 
 </body>
 </html>
+</body>
+</html> -->
